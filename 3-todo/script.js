@@ -26,14 +26,20 @@ function addTask() {
 
 function toggleTask(id) {
   const task = tasks.find((t) => t.id === id);
-  task.done = true;
+
+  if (!task.done) {
+    task.done = true;
+  } else {
+    task.done = false;
+  }
 
   console.log(task);
   render();
 }
 
 function deleteTask(id) {
-  tasks.filter((t) => t.id !== id);
+  const taskIndex = tasks.findIndex((t) => t.id === id);
+  tasks.splice(taskIndex, 1);
   render();
 }
 
