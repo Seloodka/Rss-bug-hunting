@@ -33,7 +33,7 @@ function getFiltered() {
   }
 
   if (search) {
-    result = result.filter((p) => p.name.toLowerCase().startsWith(search));
+    result = result.filter((p) => p.name.toLowerCase().includes(search));
   }
 
   return result;
